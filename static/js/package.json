@@ -1,0 +1,25 @@
+{
+  "name": "DailyVoiceTestJS",
+  "version": "0.0.1",
+  "author": "Travis Hardman",
+  "description": "Test case for how we're going to manage JavaScript",
+  "dependencies": {
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "jquery": "global:jQuery"
+  },
+  "devDependencies": {
+    "browserify": "latest",
+    "watchify": "latest",
+    "browserify-shim": "latest"
+  },
+  "scripts": {
+    "build-js": "browserify frontend.js > builds/frontend.js",
+    "watch-js": "watchify frontend.js -o builds/frontend.js -dv"
+  }
+}

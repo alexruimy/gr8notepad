@@ -1,0 +1,33 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gr8 Notep@d</title>
+  <link rel="stylesheet" href="{% static "css/notepad.css" %}" type="text/css" />
+</head>
+<body>
+
+  <div class="container" id="notepad">
+
+    <section class="top">
+      <h1>Great Notepad</h1>
+      <textarea class="editor"></textarea>
+      <p class="status">Saving...</p>
+    </section>
+
+    <section class="filter">
+      Filter:
+      <input type="text" id="filter" />
+    </section>
+
+    <section class="list">
+      <h2>Notes</h2>
+      <div class="notes-list" data-dv-module="DVNotesList" data-dv-attr-filter="filter"></div>
+    </section>
+
+  </div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script>$.noConflict(); // so we have to require jquery to use the $ notation</script>
+  <script src="{% static "js/builds/frontend.js" %}"></script>
+</body>
+</html>
