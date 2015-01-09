@@ -8,10 +8,11 @@ function DVNotesList ($el, attrs) {
   var list = $("<ul id='list'></ul>").insertAfter($el);
   var filter = this.get_filter_element(attrs);
 
-  var notes = $.getJSON('/static/js/notes.json', function(notes) {
+  var notes = $.getJSON('/json', function(notes) {
 
     $.each(notes,function(k,v) {
-      list.append("<li>" + v.title + "</li>");
+      note = v.fields;
+      list.append("<li class='note' data-dv-note-id='" + v.pk + "'>" + note.title + "</li>");
     });
 
   });
